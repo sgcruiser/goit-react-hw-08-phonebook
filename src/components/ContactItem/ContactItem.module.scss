@@ -1,0 +1,41 @@
+.contact {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    margin-top: 7px;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__number {
+    font-style: italic;
+  }
+
+  &__button {
+    background-color: rgba(250, 240, 230, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(92, 92, 92, 0.4);
+    color: rgba(92, 92, 92, 0.4);
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-weight: 500;
+
+    &:hover,
+    :focus {
+      color: crimson;
+      background-color: rgba(252, 152, 152, 0.5);
+      border: 1px solid rgba(220, 20, 60, 1);
+    }
+  }
+}
