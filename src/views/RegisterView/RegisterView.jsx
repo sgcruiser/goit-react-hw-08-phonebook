@@ -48,6 +48,8 @@ class RegisterView extends Component {
                 value={name}
                 onChange={this.handleChange}
                 className={styles.register__input}
+                placeholder="Enter name"
+                required
               />
             </label>
 
@@ -59,6 +61,8 @@ class RegisterView extends Component {
                 value={email}
                 onChange={this.handleChange}
                 className={styles.register__input}
+                placeholder="Enter e-mail"
+                required
               />
             </label>
 
@@ -70,6 +74,8 @@ class RegisterView extends Component {
                 value={password}
                 onChange={this.handleChange}
                 className={styles.register__input}
+                placeholder="Enter password"
+                required
               />
             </label>
 

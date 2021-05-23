@@ -47,6 +47,8 @@ class Login extends Component {
                 value={email}
                 onChange={this.handleChange}
                 className={styles.login__input}
+                placeholder="Enter e-mail"
+                required
               />
             </label>
 
@@ -58,6 +60,8 @@ class Login extends Component {
                 value={password}
                 onChange={this.handleChange}
                 className={styles.login__input}
+                placeholder="Enter password"
+                required
               />
             </label>
 
