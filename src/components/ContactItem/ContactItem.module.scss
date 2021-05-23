@@ -1,3 +1,5 @@
+@import '../../styles/shared.scss';
+
 .contact {
   &__item {
     display: flex;
@@ -20,10 +22,10 @@
   }
 
   &__button {
-    background-color: rgba(250, 240, 230, 0.2);
-    border-radius: 10px;
-    border: 1px solid rgba(92, 92, 92, 0.4);
-    color: rgba(92, 92, 92, 0.4);
+    background-color: $grey_disabled;
+    border-radius: 14px;
+    border: 1px solid $grey_enabled;
+    color: $grey_enabled;
     padding: 5px;
     text-align: center;
     text-decoration: none;
@@ -33,9 +35,9 @@
 
     &:hover,
     :focus {
-      color: crimson;
-      background-color: rgba(252, 152, 152, 0.5);
-      border: 1px solid rgba(220, 20, 60, 1);
+      color: $red;
+      background-color: $red_hover;
+      border: 1px solid $red;
     }
   }
 }

@@ -35,8 +35,8 @@ class FormContacts extends Component {
 
     return (
       <form onSubmit={this.handlSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
+        <label className={styles.form__label}>
+          <span>Name</span>
           <input
             type="text"
             name="name"
@@ -45,11 +45,12 @@ class FormContacts extends Component {
             required
             value={name}
             onChange={this.handlChange}
+            className={styles.form__input}
           />
         </label>
 
-        <label className={styles.label}>
-          Number
+        <label className={styles.form__label}>
+          <span>Number</span>
           <input
             type="tel"
             name="number"
@@ -58,10 +59,15 @@ class FormContacts extends Component {
             required
             value={number}
             onChange={this.handlChange}
+            className={styles.form__input}
           />
         </label>
 
-        <button type="submit" disabled={disabled} className={styles.button}>
+        <button
+          type="submit"
+          disabled={disabled}
+          className={styles.form__button}
+        >
           Add contact
         </button>
       </form>

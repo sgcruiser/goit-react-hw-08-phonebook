@@ -24,16 +24,19 @@ const items = createReducer([], {
   [deleteContactSuccess]: (state, { payload }) => filterId(state, payload),
 });
 
+const setTrue = () => true;
+const setFalse = () => false;
+
 const loading = createReducer(false, {
-  [fetchContactsRequest]: () => true,
-  [fetchContactsSuccess]: () => false,
-  [fetchContactsError]: () => false,
-  [addContactRequest]: () => true,
-  [addContactSuccess]: () => false,
-  [addContactError]: () => false,
-  [deleteContactRequest]: () => true,
-  [deleteContactSuccess]: () => false,
-  [deleteContactError]: () => false,
+  [fetchContactsRequest]: setTrue,
+  [fetchContactsSuccess]: setFalse,
+  [fetchContactsError]: setFalse,
+  [addContactRequest]: setTrue,
+  [addContactSuccess]: setFalse,
+  [addContactError]: setFalse,
+  [deleteContactRequest]: setTrue,
+  [deleteContactSuccess]: setFalse,
+  [deleteContactError]: setFalse,
 });
 
 const filter = createReducer('', {
@@ -41,15 +44,15 @@ const filter = createReducer('', {
 });
 
 const error = createReducer(false, {
-  [fetchContactsRequest]: () => false,
-  [fetchContactsSuccess]: () => false,
-  [fetchContactsError]: () => true,
-  [addContactRequest]: () => false,
-  [addContactSuccess]: () => false,
-  [addContactError]: () => true,
-  [deleteContactRequest]: () => false,
-  [deleteContactSuccess]: () => false,
-  [deleteContactError]: () => true,
+  [fetchContactsRequest]: setFalse,
+  [fetchContactsSuccess]: setFalse,
+  [fetchContactsError]: setTrue,
+  [addContactRequest]: setFalse,
+  [addContactSuccess]: setFalse,
+  [addContactError]: setTrue,
+  [deleteContactRequest]: setFalse,
+  [deleteContactSuccess]: setFalse,
+  [deleteContactError]: setTrue,
 });
 
 export default combineReducers({ items, loading, filter, error });

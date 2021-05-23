@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 
-import Phonebook from './Phonebook';
+import PhonebookView from './PhonebookView';
 
 const mapStateToProps = state => ({
   isLoading: contactsSelectors.getLoading(state),
@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => ({
   fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Phonebook);
+export default connect(mapStateToProps, mapDispatchToProps)(PhonebookView);

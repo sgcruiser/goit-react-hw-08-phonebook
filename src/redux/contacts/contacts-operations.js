@@ -20,7 +20,7 @@ const fetchContacts = () => async dispatch => {
 
     dispatch(fetchContactsSuccess(data));
   } catch (error) {
-    dispatch(fetchContactsError(error));
+    dispatch(fetchContactsError(error.message));
   }
 };
 
@@ -36,7 +36,7 @@ const addContact =
 
       dispatch(addContactSuccess(data));
     } catch (error) {
-      dispatch(addContactError(error));
+      dispatch(addContactError(error.message));
     }
   };
 
@@ -48,38 +48,9 @@ const deleteContact = id => async dispatch => {
 
     dispatch(deleteContactSuccess(id));
   } catch (error) {
-    dispatch(deleteContactError(error));
+    dispatch(deleteContactError(error.message));
   }
 };
 
 // eslint-disable-next-line
 export default { fetchContacts, addContact, deleteContact };
-
-// ! Второй вариатн, но идет дополнительный запрос на сервер
-// const addContact =
-//   ({ name, number }) =>
-//   async dispatch => {
-//     const contact = { name, number };
-
-//     dispatch(fetchContactsRequest());
-//     try {
-//       const { data } = await axios.get(`/contacts?name=${name}`);
-//       if (data[0]?.name === name) {
-//         alert(`This ${name} is on the list Phonebook`);
-//         dispatch(fetchContactsSuccess());
-//         return;
-//       }
-
-//       dispatch(addContactRequest());
-
-//       try {
-//         const { data } = await axios.post('/contacts', contact);
-
-//         dispatch(addContactSuccess(data));
-//       } catch (error) {
-//         dispatch(addContactError(error));
-//       }
-//     } catch (error) {
-//       dispatch(fetchContactsError(error));
-//     }
-//     };

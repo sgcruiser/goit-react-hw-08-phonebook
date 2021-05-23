@@ -1,3 +1,5 @@
+@import '../../styles/shared.scss';
+
 .phonebook {
   position: relative;
   display: flex;
@@ -6,11 +8,11 @@
   height: 720px;
   padding: 0 5px;
 
-  border: 3px solid #929292;
+  border: 3px solid $grey_enabled;
   border-radius: 50px;
 
   &__error {
-    color: red;
+    color: $red;
     font-size: 22px;
     font-weight: 500;
   }

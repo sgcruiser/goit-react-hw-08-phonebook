@@ -4,8 +4,8 @@ import styles from './SearchContacts.module.scss';
 
 const SearchContacts = ({ label, value, onChange }) => {
   return (
-    <label className={styles.label}>
-      <span className={styles.title}>{label}</span>
+    <label className={styles.search}>
+      <span className={styles.search__title}>{label}</span>
       <input
         type="text"
         name="name"
@@ -14,7 +14,7 @@ const SearchContacts = ({ label, value, onChange }) => {
         required
         value={value}
         onChange={onChange}
-        className={styles.input}
+        className={styles.search__input}
       />
     </label>
   );
